@@ -12,11 +12,11 @@ async function main() {
 
   let queries = utils.descriptionIntoQueries(description);
 
-  let videoData = await getBestResults(queries);
+  let videoData = await api.getBestResults(queries);
 
   let videoIds = videoData.map(n => n.id.videoId);
 
-  untitledList = utils.constructUntitledList(videoIds);
+  let untitledList = utils.constructUntitledList(videoIds);
 
   console.log(untitledList);
 
